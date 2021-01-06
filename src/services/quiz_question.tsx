@@ -3,11 +3,9 @@ import QuizJson from "../quiz.json";
 
 const shuffleArray = (array: any[]) => [...array].sort(() => Math.random() - 0.5);
 
-export const QuestionQuiz = async (): Promise<Question_Type[]> => {
-   // const res = await fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&difficulty=${level}&type=multiple`);
-   // let { results } = await res.json();
-   // return results;
-   let { results } = QuizJson;
+export const QuestionQuiz = async (totalQuestions: number, level: string): Promise<Question_Type[]> => {
+   const res = await fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&difficulty=${level}&type=multiple`);
+   let { results } = await res.json();
 
    let quizMap: Question_Type[] = results.map((obj: Quiz) => {
       return {

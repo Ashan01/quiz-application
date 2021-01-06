@@ -12,7 +12,7 @@ function App() {
 
    useEffect(() => {
       async function fetchData() {
-         let question: Question_Type[] = await QuestionQuiz();
+         let question: Question_Type[] = await QuestionQuiz(5, "easy");
          setQuiz(question);
       }
       fetchData();
@@ -39,7 +39,7 @@ function App() {
       return <h3>Loading.......</h3>;
    }
 
-   if (!showResults) {
+   if (showResults) {
       return (
          <div className="container_1">
             <h3>Results</h3>
