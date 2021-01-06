@@ -1,5 +1,4 @@
 import { Question_Type, Quiz } from "../Types/types";
-import QuizJson from "../quiz.json";
 
 const shuffleArray = (array: any[]) => [...array].sort(() => Math.random() - 0.5);
 
