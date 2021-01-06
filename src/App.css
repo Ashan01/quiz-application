@@ -1,10 +1,13 @@
 .container,
 .container_1 {
    max-width: 850px;
-   height: 250px;
+   height: 320px;
    margin: 30px auto;
    background-color: white;
    box-shadow: 30px 30px 30px #efefef;
+}
+.container h1 {
+   text-align: center;
 }
 
 .question {

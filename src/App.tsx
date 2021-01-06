@@ -49,6 +49,7 @@ function App() {
    }
    return (
       <div className="container">
+         <h1>Quiz App</h1>
          <QuestionCard
             option={quiz[currentSteps].option}
             question={quiz[currentSteps].question}
