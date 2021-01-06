@@ -1,0 +1,45 @@
+{
+   "response_code": 0,
+   "results": [
+      {
+         "category": "Entertainment: Video Games",
+         "type": "multiple",
+         "difficulty": "easy",
+         "question": "Who made Garry&#039;s Mod?",
+         "correct_answer": "Garry Newman",
+         "incorrect_answers": ["Randy Newman", "Facepunch Studios", "Gabe Newell"]
+      },
+      {
+         "category": "Entertainment: Books",
+         "type": "multiple",
+         "difficulty": "easy",
+         "question": "What is the name of the protagonist of J.D. Salinger&#039;s novel Catcher in the Rye?",
+         "correct_answer": "Holden Caulfield",
+         "incorrect_answers": ["Fletcher Christian", "Jay Gatsby", "Randall Flagg"]
+      },
+      {
+         "category": "Entertainment: Music",
+         "type": "multiple",
+         "difficulty": "easy",
+         "question": "Which of the following is not a studio album by the band Pink Floyd?",
+         "correct_answer": "Moving Pictures",
+         "incorrect_answers": ["The Dark Side of the Moon", "Wish You Were Here", "Animals"]
+      },
+      {
+         "category": "General Knowledge",
+         "type": "multiple",
+         "difficulty": "easy",
+         "question": "What zodiac sign is represented by a pair of scales?",
+         "correct_answer": "Libra",
+         "incorrect_answers": ["Aries", "Capricorn", "Sagittarius"]
+      },
+      {
+         "category": "General Knowledge",
+         "type": "multiple",
+         "difficulty": "easy",
+         "question": "What kind of aircraft was developed by Igor Sikorsky in the United States in 1942?",
+         "correct_answer": "Helicopter",
+         "incorrect_answers": ["Stealth Blimp", "Jet", "Space Capsule"]
+      }
+   ]
+}

@@ -1,0 +1,28 @@
+.container,
+.container_1 {
+   max-width: 850px;
+   height: 250px;
+   margin: 30px auto;
+   background-color: white;
+   box-shadow: 30px 30px 30px #efefef;
+}
+
+.question {
+   margin-bottom: 20px;
+   font-size: 22px;
+}
+.radio {
+   margin: 10px;
+}
+
+.btn {
+   width: 96%;
+   height: 40px;
+   margin-top: 20px;
+   margin-left: 2%;
+   color: white;
+   font-size: 20px;
+   background-color: purple;
+   border: none;
+   border-radius: 10px;
+}
