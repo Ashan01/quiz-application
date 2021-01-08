@@ -16,6 +16,7 @@ const App = () => {
       getData();
    }, []);
 
+   function handleSubmit() {}
    if (!data.length) {
       return <h3>Loading...</h3>;
    }
@@ -23,7 +24,11 @@ const App = () => {
    return (
       <div className="container">
          <h1>Quiz App</h1>
-         <QuestionCard question={data[currentStep].question} option={data[currentStep].option} />
+         <QuestionCard
+            question={data[currentStep].question}
+            option={data[currentStep].option}
+            callBack={handleSubmit}
+         />
       </div>
    );
 };

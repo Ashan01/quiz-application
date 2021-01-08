@@ -17,4 +17,5 @@ export type QuizTypes = {
 export type QuestionPropsTpes = {
    question: string;
    option: string[];
+   callBack: (e: React.FormEvent<EventTarget>, ans: string) => void;
 };

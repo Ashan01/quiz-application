@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import { QuestionPropsTpes } from "../Types/types";
 import "../App.css";
 
-export const QuestionCard: React.FC<QuestionPropsTpes> = ({ question, option }) => {
-   let [val, setVal] = useState("");
+export const QuestionCard: React.FC<QuestionPropsTpes> = ({ question, option, callBack }) => {
+   let [selectedAns, setSelectedAns] = useState("");
 
-   let handleSubmit = (e: any) => {
-      e.preventDefault();
-      console.log(val);
+   let handleSelection = (e: any) => {
+      setSelectedAns(e.target.value);
    };
    return (
       <div>
          <h3 className="question">Q: {question}</h3>
 
-         <form onSubmit={handleSubmit}>
+         <form onSubmit={(e: React.FormEvent<EventTarget>) => callBack(e, selectedAns)}>
             {option.map((opt, ind) => {
                return (
                   <label key={ind} className="radio">
-                     <input type="radio" required value={opt} onChange={(e) => setVal(e.target.value)} />
+                     <input type="radio" required value={opt} onChange={handleSelection} checked />
                      {opt}
                   </label>
                );
