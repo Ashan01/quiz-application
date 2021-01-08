@@ -6,12 +6,12 @@ import "./App.css";
 
 const App = () => {
    let [data, setData] = useState<QuizTypes[]>([]);
+   let [currentStep, setCurrentSteps] = useState(0);
 
    useEffect(() => {
       const getData = async () => {
          let question: QuizTypes[] = await FetchData();
          setData(question);
-         <h1>They Run</h1>;
       };
       getData();
    }, []);
@@ -23,7 +23,7 @@ const App = () => {
    return (
       <div className="container">
          <h1>Quiz App</h1>
-         <QuestionCard question={data[0].question} option={data[0].option} />
+         <QuestionCard question={data[currentStep].question} option={data[currentStep].option} />
       </div>
    );
 };
