@@ -9,20 +9,17 @@ const App = () => {
 
    useEffect(() => {
       const getData = async () => {
-         try {
-            let question: QuizTypes[] = await FetchData(5, "easy");
-            setData(question);
-         } catch (error) {
-            console.log(error);
-         }
+         let question: QuizTypes[] = await FetchData();
+         setData(question);
+         <h1>They Run</h1>;
       };
       getData();
    }, []);
 
    if (!data.length) {
-      return <h3>Loading</h3>;
+      return <h3>Loading...</h3>;
    }
-   console.log(data[0].question);
+
    return (
       <div className="container">
          <h1>Quiz App</h1>
