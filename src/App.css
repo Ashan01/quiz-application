@@ -6,8 +6,15 @@
    background-color: white;
    box-shadow: 30px 30px 30px #efefef;
 }
+.container_1 {
+   padding-top: 50px;
+}
 .container h1 {
    text-align: center;
+}
+.container_1 h1 {
+   text-align: center;
+   margin: 20px auto;
 }
 
 .question {
