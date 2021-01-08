@@ -8,6 +8,7 @@ export const QuestionCard: React.FC<QuestionPropsTpes> = ({ question, option, ca
    let handleSelection = (e: any) => {
       setSelectedAns(e.target.value);
    };
+
    return (
       <div>
          <h3 className="question">Q: {question}</h3>
@@ -16,7 +17,7 @@ export const QuestionCard: React.FC<QuestionPropsTpes> = ({ question, option, ca
             {option.map((opt, ind) => {
                return (
                   <label key={ind} className="radio">
-                     <input type="radio" required value={opt} onChange={handleSelection} checked />
+                     <input type="radio" value={opt} onChange={handleSelection} checked={selectedAns === opt} />
                      {opt}
                   </label>
                );

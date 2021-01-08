@@ -16,7 +16,11 @@ const App = () => {
       getData();
    }, []);
 
-   function handleSubmit() {}
+   function handleSubmit(e: React.FormEvent<EventTarget>, userAns: string) {
+      e.preventDefault();
+      const Question = `user Ans ${userAns} correctAns ${data[currentStep].correct_answer}`;
+      console.log(Question);
+   }
    if (!data.length) {
       return <h3>Loading...</h3>;
    }
