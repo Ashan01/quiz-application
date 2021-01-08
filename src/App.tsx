@@ -1,62 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { FetchData } from "./Services/fetchData";
+import { QuizTypes } from "./Types/types";
+import { QuestionCard } from "./Components/QuestionCard";
 import "./App.css";
-import { QuestionQuiz } from "./services/quiz_question";
-import { Question_Type } from "./Types/types";
-import { QuestionCard } from "./Component/QuestionCard";
 
-function App() {
-   let [quiz, setQuiz] = useState<Question_Type[]>([]);
-   let [currentSteps, setcurrentSteps] = useState(0);
-   let [score, setScore] = useState(0);
-   let [showResults, setShowResults] = useState(false);
+const App = () => {
+   let [data, setData] = useState<QuizTypes[]>([]);
 
    useEffect(() => {
-      async function fetchData() {
-         let question: Question_Type[] = await QuestionQuiz(5, "easy");
-         setQuiz(question);
-      }
-      fetchData();
+      const getData = async () => {
+         try {
+            let question: QuizTypes[] = await FetchData(5, "easy");
+            setData(question);
+         } catch (error) {
+            console.log(error);
+         }
+      };
+      getData();
    }, []);
 
-   function handleSubmit(e: React.FormEvent<EventTarget>, userAns: any) {
-      e.preventDefault();
-
-      let currentQuestion: Question_Type = quiz[currentSteps];
-
-      console.log(`correct Ans ${currentQuestion.correct_answer} userAns ${userAns}`);
-
-      if (userAns === currentQuestion.correct_answer) {
-         setScore(++score);
-      }
-
-      if (currentSteps !== quiz.length - 1) {
-         setcurrentSteps(++currentSteps);
-      } else {
-         setShowResults(true);
-      }
+   if (!data.length) {
+      return <h3>Loading</h3>;
    }
-   if (!quiz.length) {
-      return <h3>Loading.......</h3>;
-   }
-
-   if (showResults) {
-      return (
-         <div className="container_1">
-            <h3>Results</h3>
-            <p>{`The total score is ${score} out of ${quiz.length}`}</p>
-         </div>
-      );
-   }
+   console.log(data[0].question);
    return (
       <div className="container">
          <h1>Quiz App</h1>
-         <QuestionCard
-            option={quiz[currentSteps].option}
-            question={quiz[currentSteps].question}
-            callBack={handleSubmit}
-         />
+         <QuestionCard question={data[0].question} option={data[0].option} />
       </div>
    );
-}
+};
 
 export default App;

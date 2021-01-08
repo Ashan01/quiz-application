@@ -1,7 +1,7 @@
 .container,
 .container_1 {
    max-width: 850px;
-   height: 320px;
+   height: 350px;
    margin: 30px auto;
    background-color: white;
    box-shadow: 30px 30px 30px #efefef;
@@ -15,7 +15,10 @@
    font-size: 22px;
 }
 .radio {
-   margin: 10px;
+   display: flex;
+   flex-direction: row;
+   margin: 20px 0;
+   font-size: 18px;
 }
 
 .btn {
