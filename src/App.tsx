@@ -61,10 +61,10 @@ const App = () => {
                callBack={handleSubmit}
             />
          </div>
-         <div>
+         {/* <div>
             <h1>Helllo World</h1>
             <button onClick={initNotification}>Configure</button>
-         </div>
+         </div> */}
       </>
    );
 }; //

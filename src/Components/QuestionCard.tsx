@@ -27,6 +27,7 @@ export const QuestionCard: React.FC<QuestionPropsTpes> = ({
                   <label key={ind} className="radio">
                      <input
                         type="radio"
+                        required
                         value={opt}
                         onChange={handleSelection}
                         checked={selectedAns === opt}
