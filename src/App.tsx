@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { initNotification } from "./Services/worker";
+// import { initNotification } from "./Services/worker";
 import { QuestionCard } from "./Components/QuestionCard";
 import { FetchData } from "./Services/fetchData";
 import { QuizTypes } from "./Types/types";
